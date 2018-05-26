@@ -1,13 +1,11 @@
-#N canvas 483 159 686 522 10;
-#X obj 81 209 grainEnv sin;
+#N canvas 758 193 686 522 10;
 #X obj 149 169 r env-type;
 #X text 135 475 contains tables for windowing functions;
-#X obj 54 476 windowTables;
-#X obj 396 43 loadbang;
-#X obj 375 42 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
+#X obj 349 83 loadbang;
+#X obj 320 84 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X msg 399 76 hello.wav goodbye.wav;
-#X obj 400 148 print length;
+#X msg 352 116 hello.wav goodbye.wav;
+#X obj 353 188 print length;
 #X obj 66 334 table samp1L;
 #X obj 151 335 table samp1R;
 #X obj 63 356 table samp2L;
@@ -20,9 +18,11 @@
 #X obj 50 422 table samp5L;
 #X obj 52 445 table samp6L;
 #X obj 137 446 table samp6R;
-#X obj 400 111 multi-stereo-soundfiler samp;
-#X connect 1 0 0 1;
-#X connect 4 0 6 0;
-#X connect 5 0 6 0;
-#X connect 6 0 20 0;
-#X connect 20 0 7 0;
+#X obj 353 151 multi-stereo-soundfiler samp;
+#X obj 76 223 grainEnv sin;
+#X obj 52 474 windowTables;
+#X connect 0 0 19 1;
+#X connect 2 0 4 0;
+#X connect 3 0 4 0;
+#X connect 4 0 18 0;
+#X connect 18 0 5 0;
