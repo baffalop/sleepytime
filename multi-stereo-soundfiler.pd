@@ -1,4 +1,4 @@
-#N canvas 643 341 492 564 10;
+#N canvas 617 190 557 681 10;
 #X obj 48 441 soundfiler;
 #X obj 49 310 list append samp;
 #X obj 48 371 list prepend read -resize;
@@ -8,8 +8,8 @@
 #X obj 109 148 + 1;
 #X msg 125 84 1;
 #X obj 50 22 inlet;
-#X obj 50 502 prepent;
-#X obj 50 534 outlet;
+#X obj 47 600 prepent;
+#X obj 47 632 outlet;
 #X text 138 148 sample index;
 #X obj 49 53 t a b;
 #X obj 49 340 list append samp;
@@ -24,13 +24,16 @@
 #X obj 173 21 inlet;
 #X msg 16 275 \$2/\$1;
 #X obj 129 184 s \$0-index;
-#X obj 89 473 r \$0-index;
+#X obj 86 571 r \$0-index;
 #X obj 173 88 s \$0-path;
 #X obj 31 217 r \$0-path;
 #X obj 16 248 pack s s;
 #X obj 173 52 symbol \$2;
 #X obj 112 21 loadbang;
-#X connect 0 0 9 0;
+#X obj 47 550 / 1;
+#X obj 78 501 samplerate~;
+#X obj 78 471 loadbang;
+#X connect 0 0 31 0;
 #X connect 1 0 13 0;
 #X connect 2 0 3 0;
 #X connect 3 0 14 0;
@@ -61,3 +64,6 @@
 #X connect 28 0 23 0;
 #X connect 29 0 26 0;
 #X connect 30 0 29 0;
+#X connect 31 0 9 0;
+#X connect 32 0 31 1;
+#X connect 33 0 32 0;
