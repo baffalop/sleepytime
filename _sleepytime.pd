@@ -1,4 +1,4 @@
-#N canvas 165 162 686 522 10;
+#N canvas 897 262 686 522 10;
 #X obj 284 27 loadbang;
 #X obj 255 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -18,8 +18,31 @@
 #X obj 288 95 multi-stereo-soundfiler samp sounds;
 #X obj 267 132 s lens;
 #X msg 287 61 bouncing-eggs.WAV;
+#X obj 327 481 dac~;
+#X obj 434 356 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 0 1;
+#X obj 380 391 dbtorms;
+#X obj 326 427 *~ 0;
+#X obj 362 426 *~ 0;
+#X msg 203 197 0 1000;
+#X msg 274 196 2000 3000;
+#X msg 359 208 3000 4000;
+#X obj 291 286 xreader~ samp 1 400;
+#X obj 433 319 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
 #X connect 0 0 17 0;
 #X connect 1 0 17 0;
 #X connect 15 0 2 0;
 #X connect 15 0 16 0;
 #X connect 17 0 15 0;
+#X connect 19 0 20 0;
+#X connect 20 0 22 1;
+#X connect 20 0 21 1;
+#X connect 21 0 18 0;
+#X connect 22 0 18 1;
+#X connect 23 0 26 0;
+#X connect 24 0 26 0;
+#X connect 25 0 26 0;
+#X connect 26 0 21 0;
+#X connect 26 1 22 0;
+#X connect 26 2 27 0;
