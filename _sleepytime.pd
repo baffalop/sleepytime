@@ -1,8 +1,8 @@
-#N canvas 766 90 686 522 10;
+#N canvas 753 172 686 522 10;
 #X obj 284 27 loadbang;
 #X obj 255 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
-#X obj 320 133 print length;
+#X obj 338 135 print length;
 #X obj 21 386 table samp1L;
 #X obj 105 386 table samp1R;
 #X obj 21 408 table samp2L;
@@ -15,8 +15,8 @@
 #X obj 21 474 table samp5L;
 #X obj 21 497 table samp6L;
 #X obj 105 497 table samp6R;
-#X obj 288 95 multi-stereo-soundfiler samp sounds;
-#X obj 267 132 s lens;
+#X obj 306 97 multi-stereo-soundfiler samp sounds;
+#X obj 285 134 s lens;
 #X msg 287 61 bouncing-eggs.WAV;
 #X obj 327 481 dac~;
 #X obj 435 282 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
@@ -28,19 +28,22 @@
 #X obj 188 234 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
 #X obj 220 274 shufflsf~ samp 1 10000 4000;
-#X obj 310 200 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 299 203 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256 0;
-#X obj 381 201 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 379 205 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256 0;
 #X obj 435 314 / 127;
 #X obj 435 338 * 40;
 #X obj 435 362 + 68;
 #X text 434 260 volume;
+#X obj 255 96 length;
+#X obj 222 134 s sampsn;
 #X connect 0 0 17 0;
 #X connect 1 0 17 0;
 #X connect 15 0 2 0;
 #X connect 15 0 16 0;
 #X connect 17 0 15 0;
+#X connect 17 0 32 0;
 #X connect 19 0 28 0;
 #X connect 20 0 22 1;
 #X connect 20 0 21 1;
@@ -55,3 +58,4 @@
 #X connect 28 0 29 0;
 #X connect 29 0 30 0;
 #X connect 30 0 20 0;
+#X connect 32 0 33 0;
