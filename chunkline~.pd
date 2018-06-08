@@ -1,7 +1,7 @@
 #N canvas 173 112 700 504 10;
 #X obj 51 31 inlet;
 #X obj 161 193 inlet;
-#X obj 54 346 line~;
+#X obj 51 346 line~;
 #X obj 51 63 t a a;
 #X obj 78 96 unpack f f;
 #X obj 249 236 - \$1;
@@ -13,10 +13,10 @@
 #X obj 113 232 * 1;
 #X text 143 231 rate;
 #X text 286 236 bang ms from end;
-#X msg 52 305 \$1 \, \$2 \$3;
+#X msg 51 305 \$1 \, \$2 \$3;
 #X obj 115 398 >~ 0;
 #X obj 115 426 edge~;
-#X obj 55 460 outlet~;
+#X obj 51 460 outlet~;
 #X obj 115 458 outlet;
 #X connect 0 0 3 0;
 #X connect 1 0 11 1;
