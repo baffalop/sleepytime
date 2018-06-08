@@ -3,39 +3,39 @@
 #X obj 255 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
 #X obj 338 135 print length;
-#X obj 21 386 table samp1L;
-#X obj 105 386 table samp1R;
-#X obj 21 408 table samp2L;
-#X obj 105 408 table samp2R;
-#X obj 21 428 table samp3L;
-#X obj 105 428 table samp3R;
-#X obj 21 454 table samp4L;
-#X obj 105 454 table samp4R;
-#X obj 105 474 table samp5R;
-#X obj 21 474 table samp5L;
-#X obj 21 497 table samp6L;
-#X obj 105 497 table samp6R;
+#X obj 24 417 table samp1L;
+#X obj 108 417 table samp1R;
+#X obj 24 439 table samp2L;
+#X obj 108 439 table samp2R;
+#X obj 24 459 table samp3L;
+#X obj 108 459 table samp3R;
+#X obj 24 485 table samp4L;
+#X obj 108 485 table samp4R;
+#X obj 108 505 table samp5R;
+#X obj 24 505 table samp5L;
+#X obj 24 528 table samp6L;
+#X obj 108 528 table samp6R;
 #X obj 306 97 multi-stereo-soundfiler samp sounds;
 #X obj 285 134 s lens;
-#X obj 327 481 dac~;
-#X obj 435 287 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#X obj 418 530 dac~;
+#X obj 513 267 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 10000 1;
-#X obj 380 391 dbtorms;
-#X obj 326 427 *~ 0;
-#X obj 362 426 *~ 0;
-#X floatatom 419 437 5 0 0 0 - - -, f 5;
-#X obj 337 307 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 513 402 dbtorms;
+#X obj 417 476 *~ 0;
+#X obj 453 475 *~ 0;
+#X floatatom 513 452 5 0 0 0 - - -, f 5;
+#X obj 409 371 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256 0;
-#X obj 435 314 / 127;
-#X obj 435 338 * 40;
-#X obj 435 362 + 68;
-#X text 526 265 volume;
+#X obj 513 294 / 127;
+#X obj 513 318 * 40;
+#X obj 513 342 + 68;
+#X text 604 245 volume;
 #X obj 255 96 length;
 #X obj 222 134 s sampsn;
 #X msg 287 61 bouncing-eggs.WAV hippo.wav ice-lapping.wav rain-on-tent.wav
 ;
-#X obj 435 232 loadbang;
-#X msg 435 257 100;
+#X obj 513 212 loadbang;
+#X msg 513 237 100;
 #X obj 17 93 del 120000;
 #X obj 46 18 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
 ;
@@ -45,17 +45,25 @@
 #X obj 134 216 * 1000;
 #X obj 46 286 s control;
 #X obj 86 132 metro 60000;
-#X obj 212 300 r control;
-#X obj 212 329 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+#X obj 363 342 r control;
+#X obj 363 371 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
-#X obj 222 205 counter;
-#X obj 149 92 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 0 256 0;
 #X obj 134 192 random 60;
-#X obj 212 356 manyshuffs~ samp 10000 5000;
-#X text 57 328 click to change sound ->;
-#X text 73 18 <- ON/OFF;
+#X obj 307 409 manyshuffs~ samp 10000 5000;
+#X text 208 370 click to change sound ->;
 #X text 370 37 list of sound files (up to 6);
+#X obj 149 102 * 1000;
+#X obj 149 77 r pace;
+#X obj 318 219 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 4000 1;
+#X obj 300 272 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 60 256 0;
+#X obj 264 248 + 20;
+#X obj 318 164 loadbang;
+#X msg 318 191 40;
+#X text 301 247 pace of transitions (in secs);
+#X obj 300 295 s pace;
+#X text 73 18 <——(((ON/OFF)));
 #X connect 0 0 30 0;
 #X connect 1 0 30 0;
 #X connect 15 0 2 0;
@@ -66,7 +74,7 @@
 #X connect 19 0 22 0;
 #X connect 20 0 17 0;
 #X connect 21 0 17 1;
-#X connect 23 0 46 1;
+#X connect 23 0 44 1;
 #X connect 24 0 25 0;
 #X connect 25 0 26 0;
 #X connect 26 0 19 0;
@@ -82,12 +90,18 @@
 #X connect 35 1 40 0;
 #X connect 36 0 39 0;
 #X connect 37 0 36 0;
-#X connect 37 1 45 0;
+#X connect 37 1 43 0;
 #X connect 38 0 36 1;
 #X connect 40 0 37 0;
 #X connect 41 0 42 0;
-#X connect 42 0 46 0;
-#X connect 44 0 40 1;
-#X connect 45 0 38 0;
-#X connect 46 0 20 0;
-#X connect 46 1 21 0;
+#X connect 42 0 44 0;
+#X connect 43 0 38 0;
+#X connect 44 0 20 0;
+#X connect 44 1 21 0;
+#X connect 47 0 40 1;
+#X connect 48 0 47 0;
+#X connect 49 0 51 0;
+#X connect 50 0 55 0;
+#X connect 51 0 50 0;
+#X connect 52 0 53 0;
+#X connect 53 0 49 0;
