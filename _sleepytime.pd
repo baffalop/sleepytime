@@ -1,4 +1,4 @@
-#N canvas 782 68 686 545 10;
+#N canvas 783 67 686 545 10;
 #X obj 284 27 loadbang;
 #X obj 255 28 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144 -1
 -1;
@@ -53,6 +53,9 @@
 -262144 -1 -1 0 256 0;
 #X obj 134 192 random 60;
 #X obj 212 356 manyshuffs~ samp 10000 5000;
+#X text 57 328 click to change sound ->;
+#X text 73 18 <- ON/OFF;
+#X text 370 37 list of sound files (up to 6);
 #X connect 0 0 30 0;
 #X connect 1 0 30 0;
 #X connect 15 0 2 0;
