@@ -24,7 +24,7 @@
 #X obj 263 79 f 1;
 #X obj 101 303 r \$0-xfade;
 #X obj 390 306 r \$0-xfade;
-#X obj 167 490 xcos~;
+#X obj 167 490 xpow~;
 #X connect 0 0 12 0;
 #X connect 1 0 9 0;
 #X connect 2 0 20 0;
