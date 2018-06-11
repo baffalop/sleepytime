@@ -1,0 +1,8 @@
+#N canvas 615 23 450 300 10;
+#X obj 106 39 inlet;
+#X obj 85 104 gate;
+#X obj 52 66 r debug;
+#X obj 85 136 print \$1;
+#X connect 0 0 1 1;
+#X connect 1 0 3 0;
+#X connect 2 0 1 0;
