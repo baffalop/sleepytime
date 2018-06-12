@@ -1,6 +1,6 @@
 #N canvas 174 61 1319 832 10;
 #X obj 70 -56 inlet;
-#X obj 219 -36 r sampsn;
+#X obj 219 -39 r sampsn;
 #X obj 142 32 random 1;
 #X obj 142 -57 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
 -1 -1;
@@ -62,7 +62,7 @@
 #X obj 142 90 t b f;
 #X obj 142 129 f 0;
 #X obj 142 59 + 1;
-#X obj 187 9 - 1;
+#X obj 219 -11 - 1;
 #X obj 1179 63 - 1;
 #X obj 528 44 r \$0-on;
 #X obj 198 182 + 1;
@@ -75,7 +75,6 @@
 #X obj 323 243 dbg toshuff;
 #X obj 979 247 xpow~ _sinhann;
 #X connect 0 0 2 0;
-#X connect 1 0 4 1;
 #X connect 1 0 62 0;
 #X connect 2 0 61 0;
 #X connect 3 0 2 0;
@@ -162,6 +161,7 @@
 #X connect 60 0 58 0;
 #X connect 61 0 59 0;
 #X connect 62 0 2 1;
+#X connect 62 0 4 1;
 #X connect 63 0 42 1;
 #X connect 64 0 49 1;
 #X connect 64 0 54 0;
