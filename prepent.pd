@@ -1,0 +1,12 @@
+#N canvas 0 22 450 300 10;
+#X obj 45 109 list trim;
+#X obj 45 81 list prepend \$1;
+#X obj 45 146 outlet;
+#X obj 45 42 inlet;
+#X obj 101 43 inlet;
+#X text 43 6 vanilla prepend object \, as per https://puredata.info/docs/tutorials/PdForMaxUsers#prepend
+;
+#X connect 0 0 2 0;
+#X connect 1 0 0 0;
+#X connect 3 0 1 0;
+#X connect 4 0 1 1;
