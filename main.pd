@@ -1,78 +1,86 @@
-#N canvas 601 98 647 572 10;
-#X obj 230 17 loadbang;
-#X obj 337 116 print length;
-#X obj 24 417 table samp1L;
-#X obj 108 417 table samp1R;
-#X obj 24 439 table samp2L;
-#X obj 108 439 table samp2R;
-#X obj 24 459 table samp3L;
-#X obj 108 459 table samp3R;
-#X obj 24 485 table samp4L;
-#X obj 108 485 table samp4R;
-#X obj 108 505 table samp5R;
-#X obj 24 505 table samp5L;
-#X obj 24 528 table samp6L;
-#X obj 108 528 table samp6R;
-#X obj 307 79 multi-stereo-soundfiler samp sounds;
-#X obj 286 116 s lens;
-#X obj 418 530 dac~;
-#X obj 440 237 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+#N canvas 831 171 880 622 10;
+#X obj 321 26 loadbang;
+#X obj 428 125 print length;
+#X obj 28 425 table samp1L;
+#X obj 112 425 table samp1R;
+#X obj 28 447 table samp2L;
+#X obj 112 447 table samp2R;
+#X obj 28 467 table samp3L;
+#X obj 112 467 table samp3R;
+#X obj 28 493 table samp4L;
+#X obj 112 493 table samp4R;
+#X obj 112 513 table samp5R;
+#X obj 28 513 table samp5L;
+#X obj 28 536 table samp6L;
+#X obj 112 536 table samp6R;
+#X obj 398 88 multi-stereo-soundfiler samp sounds;
+#X obj 377 125 s lens;
+#X obj 509 539 dac~;
+#X obj 531 246 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
 -1 -1 10000 1;
-#X obj 512 401 dbtorms;
-#X obj 417 476 *~ 0;
-#X obj 453 475 *~ 0;
-#X floatatom 512 457 5 0 0 0 - - -, f 5;
-#X obj 409 371 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+#X obj 603 410 dbtorms;
+#X obj 508 485 *~ 0;
+#X obj 544 484 *~ 0;
+#X floatatom 603 466 5 0 0 0 - - -, f 5;
+#X obj 500 380 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
 -262144 -1 -1 0 256 0;
-#X obj 512 329 / 127;
-#X obj 512 353 * 40;
-#X obj 512 377 + 68;
-#X text 527 214 volume;
-#X obj 256 78 length;
-#X obj 223 116 s sampsn;
-#X obj 476 131 loadbang;
-#X msg 440 161 100;
-#X obj 17 93 del 120000;
-#X obj 46 18 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 1 1
-;
-#X obj 46 47 route 1;
-#X obj 85 243 del 0;
-#X obj 86 163 t b b;
-#X obj 134 216 * 1000;
-#X obj 46 286 s control;
-#X obj 86 132 metro 60000;
-#X obj 363 342 r control;
-#X obj 363 371 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
--1 -1;
-#X obj 134 192 random 60;
-#X text 208 370 click to change sound ->;
-#X text 315 16 list of sound files (up to 6);
-#X obj 149 102 * 1000;
-#X obj 149 77 r pace;
-#X obj 230 237 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
--1 -1 7000 1;
-#X obj 368 237 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 90 256 0;
-#X obj 277 268 + 20;
-#X obj 277 296 s pace;
-#X text 73 18 <——(((ON/OFF)));
-#X msg 230 163 70;
-#X obj 578 237 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
--262144 -1 -1 99 256 0;
-#X obj 564 426 s vol;
-#X obj 578 215 r vol;
-#X obj 368 214 r pace;
-#X obj 564 401 int;
-#X text 243 215 pace of transitions;
-#X text 367 255 (seconds);
-#X text 578 256 (dB);
-#X obj 308 409 manyshuffs~ samp 5000 2000;
-#X obj 204 528 s debug;
-#X obj 204 493 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+#X obj 603 338 / 127;
+#X obj 603 362 * 40;
+#X obj 603 386 + 68;
+#X text 618 223 volume;
+#X obj 347 87 length;
+#X obj 314 125 s sampsn;
+#X obj 567 140 loadbang;
+#X msg 531 170 100;
+#X obj 113 149 del 120000;
+#X obj 139 66 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
 1;
-#X msg 288 43 grjotagja.wav hippo.wav ice-lapping.wav rain-on-tent.wav
+#X obj 139 95 route 1;
+#X obj 178 291 del 0;
+#X obj 179 211 t b b;
+#X obj 227 264 * 1000;
+#X obj 139 334 s control;
+#X obj 179 180 metro 60000;
+#X obj 454 351 r control;
+#X obj 454 380 bng 15 250 50 0 empty empty empty 17 7 0 10 -262144
+-1 -1;
+#X obj 227 240 random 60;
+#X text 299 379 click to change sound ->;
+#X text 406 25 list of sound files (up to 6);
+#X obj 224 118 * 1000;
+#X obj 224 93 r pace;
+#X obj 321 246 hsl 128 15 0 127 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 7000 1;
+#X obj 459 246 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 90 256 0;
+#X obj 368 277 + 20;
+#X obj 368 305 s pace;
+#X text 166 66 <——(((ON/OFF)));
+#X msg 321 172 70;
+#X obj 669 246 nbx 5 14 -1e+37 1e+37 0 0 empty empty empty 0 -8 0 10
+-262144 -1 -1 99 256 0;
+#X obj 655 435 s vol;
+#X obj 669 224 r vol;
+#X obj 459 223 r pace;
+#X obj 655 410 int;
+#X text 334 224 pace of transitions;
+#X text 458 264 (seconds);
+#X text 669 265 (dB);
+#X obj 399 418 manyshuffs~ samp 5000 2000;
+#X obj 207 502 s debug;
+#X obj 207 467 tgl 15 0 empty empty empty 17 7 0 10 -262144 -1 -1 0
+1;
+#X msg 379 52 grjotagja.wav hippo.wav ice-lapping.wav rain-on-tent.wav
 stream-through-ice.wav bubbls-in-mud.wav caravan-wind.wav;
+#X obj 118 14 r aux;
+#X obj 118 37 sel 1;
+#X obj 29 202 s screenLine2;
+#X msg 14 153 ON;
+#X msg 58 154 OFF;
+#X msg 636 102 \; screenLine1 OFF \; screenLine2 1: Pace of transitions
+\; screenLine3 Aux: ON/OFF \;;
 #X connect 0 0 63 0;
+#X connect 0 0 69 0;
 #X connect 14 0 1 0;
 #X connect 14 0 15 0;
 #X connect 17 0 23 0;
@@ -94,7 +102,9 @@ stream-through-ice.wav bubbls-in-mud.wav caravan-wind.wav;
 #X connect 32 0 33 0;
 #X connect 33 0 37 0;
 #X connect 33 0 31 0;
+#X connect 33 0 67 0;
 #X connect 33 1 38 0;
+#X connect 33 1 68 0;
 #X connect 34 0 37 0;
 #X connect 35 0 34 0;
 #X connect 35 1 41 0;
@@ -116,3 +126,7 @@ stream-through-ice.wav bubbls-in-mud.wav caravan-wind.wav;
 #X connect 62 0 61 0;
 #X connect 63 0 14 0;
 #X connect 63 0 27 0;
+#X connect 64 0 65 0;
+#X connect 65 0 32 0;
+#X connect 67 0 66 0;
+#X connect 68 0 66 0;
